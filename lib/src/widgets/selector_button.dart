@@ -99,7 +99,7 @@ class SelectorButton extends StatelessWidget {
                   }
                 : null,
             child: Padding(
-              padding: const EdgeInsets.only(right: 8.0),
+              padding: const EdgeInsets.only(right: 8.0,),
               child: borderedContainer(
                 child: Item(
                   country: country,
@@ -110,6 +110,7 @@ class SelectorButton extends StatelessWidget {
                   textStyle: selectorTextStyle,
                   showSeparator: showSeparator,
                   separatorBorderSide: separatorBorderSide ,
+
                 ),
               ),
             ),
@@ -119,6 +120,7 @@ class SelectorButton extends StatelessWidget {
   Widget borderedContainer({ required Widget child,}){
     return  Container(
       height: selectorHeight ?? 60,
+      padding: const EdgeInsets.only(right: 4),
       child: child,
       decoration: selectorDecoration ?? BoxDecoration(
         border: Border.all(

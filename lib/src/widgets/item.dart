@@ -13,6 +13,7 @@ class Item extends StatelessWidget {
   final bool trailingSpace;
   final bool showSeparator;
   final BorderSide? separatorBorderSide;
+  final bool isShowSelectorArrow;
 
   const Item({
     Key? key,
@@ -22,7 +23,7 @@ class Item extends StatelessWidget {
     this.textStyle,
     this.withCountryNames = false,
     this.leadingPadding = 12,
-    this.trailingSpace = true, this.showSeparator = false, this.separatorBorderSide,
+    this.trailingSpace = true, this.showSeparator = false, this.separatorBorderSide, this.isShowSelectorArrow = false,
   }) : super(key: key);
 
   @override
@@ -48,7 +49,7 @@ class Item extends StatelessWidget {
             textDirection: TextDirection.ltr,
             style: textStyle,
           ),
-           Padding(
+          if(isShowSelectorArrow) Padding(
             padding: const EdgeInsets.symmetric(horizontal: 1),
             child: Icon(
               Icons.keyboard_arrow_down_outlined,

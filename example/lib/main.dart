@@ -56,12 +56,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 print(value);
               },
               showSeparator: true,
-              separatorBorderSide: BorderSide(
-                color: Colors.grey,
-                width: 1
-              ),
               selectorDecoration: BoxDecoration(
-                borderRadius: BorderRadius.horizontal(left: Radius.circular(8))
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(
+                  color: Colors.black45
+                )
               ),
               selectorConfig: SelectorConfig(
                 selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
