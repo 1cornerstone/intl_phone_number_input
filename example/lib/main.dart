@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onInputValidated: (bool value) {
                 print(value);
               },
-              showSeparator: true,
+              showSeparator: false,
               separatorBorderSide: BorderSide(
                 color: Colors.grey,
                 width: 1
@@ -65,8 +65,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               selectorConfig: SelectorConfig(
                 selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
-                leadingPadding: 4,
-                showFlags: true,
+                leadingPadding: 10,
+                // showFlags: false,
               ),
               inputDecoration: InputDecoration(
                   hintText: 'Phone number',
@@ -76,11 +76,11 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               ignoreBlank: false,
               spaceBetweenSelectorAndTextField: 0,
-              autoValidateMode: AutovalidateMode.disabled,
+              // autoValidateMode: AutovalidateMode.disabled,
               selectorTextStyle: TextStyle(color: Colors.black),
               initialValue: number,
               textFieldController: controller,
-              formatInput: false,
+              formatInput: true,
               keyboardType: TextInputType.numberWithOptions(signed: true, decimal: true),
               onSaved: (PhoneNumber number) {
                 print('On Saved: $number');

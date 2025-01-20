@@ -37,25 +37,26 @@ class Item extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           SizedBox(width: leadingPadding),
-          if(showFlag) _Flag(
-            country: country,
-            showFlag: showFlag,
-            useEmoji: useEmoji,
-          ),
-          if(showFlag) SizedBox(width: 5.0),
           Text(
-            '$dialCode',
+            '${country?.alpha2Code}',
             textDirection: TextDirection.ltr,
             style: textStyle,
           ),
-           Padding(
+          Padding(
             padding: const EdgeInsets.symmetric(horizontal: 1),
             child: Icon(
               Icons.keyboard_arrow_down_outlined,
               size: 20,
               color: Colors.black,
             ),
-          )
+          ),
+          // if(showFlag) SizedBox(width: 5.0),
+          Text(
+            '$dialCode',
+            textDirection: TextDirection.ltr,
+            style: textStyle,
+          ),
+
         ],
       ),
       decoration: BoxDecoration(

@@ -46,43 +46,46 @@ class SelectorButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return selectorConfig.selectorType == PhoneInputSelectorType.DROPDOWN
-        ? countries.isNotEmpty && countries.length > 1
-            ?
-            borderedContainer(
-              child: DropdownButtonHideUnderline(
-                  child: DropdownButton<Country>(
-                    icon: isShowSelectorArrow ? Icon(Icons.arrow_drop_down_outlined) : SizedBox.shrink(),
-                    key: Key(TestHelper.DropdownButtonKeyValue),
-                    hint: Item(
-                      country: country,
-                      showFlag: selectorConfig.showFlags,
-                      useEmoji: selectorConfig.useEmoji,
-                      leadingPadding: selectorConfig.leadingPadding,
-                      trailingSpace: selectorConfig.trailingSpace,
-                      textStyle: selectorTextStyle,
-                    ),
-                    value: country,
-                    items: mapCountryToDropdownItem(countries),
-                    onChanged: isEnabled ? onCountryChanged : null,
-                  ),
-                ),
-            )
-            : Item(
-                country: country,
-                showFlag: selectorConfig.showFlags,
-                useEmoji: selectorConfig.useEmoji,
-                leadingPadding: selectorConfig.leadingPadding,
-                trailingSpace: selectorConfig.trailingSpace,
-                textStyle: selectorTextStyle,
-                showSeparator: showSeparator,
-              )
-        : MaterialButton(
+    return
+      // selectorConfig.selectorType == PhoneInputSelectorType.DROPDOWN
+      //   ? countries.isNotEmpty && countries.length > 1
+      //       ?
+      //       borderedContainer(
+      //         child: DropdownButtonHideUnderline(
+      //             child: DropdownButton<Country>(
+      //               icon: isShowSelectorArrow ? Icon(Icons.arrow_drop_down_outlined) : SizedBox.shrink(),
+      //               key: Key(TestHelper.DropdownButtonKeyValue),
+      //               hint: Item(
+      //                 country: country,
+      //                 showFlag: selectorConfig.showFlags,
+      //                 useEmoji: selectorConfig.useEmoji,
+      //                 leadingPadding: selectorConfig.leadingPadding,
+      //                 trailingSpace: selectorConfig.trailingSpace,
+      //                 textStyle: selectorTextStyle,
+      //               ),
+      //               value: country,
+      //               items: mapCountryToDropdownItem(countries),
+      //               onChanged: isEnabled ? onCountryChanged : null,
+      //             ),
+      //           ),
+      //       )
+      //       : Item(
+      //           country: country,
+      //           showFlag: selectorConfig.showFlags,
+      //           useEmoji: selectorConfig.useEmoji,
+      //           leadingPadding: selectorConfig.leadingPadding,
+      //           trailingSpace: selectorConfig.trailingSpace,
+      //           textStyle: selectorTextStyle,
+      //           showSeparator: showSeparator,
+      //         )
+      //   :
+      MaterialButton(
             key: Key(TestHelper.DropdownButtonKeyValue),
             padding: EdgeInsets.zero,
             minWidth: 0,
             onPressed: countries.isNotEmpty && countries.length > 1 && isEnabled
                 ? () async {
+              print('hgrejnkmlr,e;.');
                     Country? selected;
                     if (selectorConfig.selectorType ==
                         PhoneInputSelectorType.BOTTOM_SHEET) {

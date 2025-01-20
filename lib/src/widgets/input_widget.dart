@@ -427,7 +427,7 @@ class _InputWidgetView
                 selectorTextStyle: widget.selectorTextStyle,
                 searchBoxDecoration: widget.searchBoxDecoration,
                 locale: state.locale,
-                isEnabled: false,
+                isEnabled: true,
                 autoFocusSearchField: widget.autoFocusSearch,
                 isScrollControlled: widget.countrySelectorScrollControlled,
                 selectorDecoration: widget.selectorDecoration,
